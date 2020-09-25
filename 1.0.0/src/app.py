@@ -29,7 +29,6 @@ class Mall(AppBase):
 
         if log == 'yes' or log == 'y':
             os.system('sshpass -p hitimc@ics scp 10.245.142.242:/home/log/shuffle_log.txt /')
-            time.sleep(5)
             os.system('echo mall is running... ------start time: `(date +%Y-%m-%d_%H:%M:%S)` >> shuffle_log.txt')
         browser.get("http://10.245.142.98")
         browser.set_window_size(1920, 1080)
@@ -73,8 +72,7 @@ class Mall(AppBase):
         time.sleep(2)
         if log == 'yes' or log == 'y':
             os.system('echo mall has finished... ------finish time: `(date +%Y-%m-%d_%H:%M:%S)` >> shuffle_log.txt')
-            os.system('sshpass -p hitimc@ics scp /shuffle_log.txt 10.245.142.242:/home/log/')
-        time.sleep(5)
+            os.system('sshpass -p hitimc@ics scp /shuffle_log.txt 10.245.142.242:/')
         return "OK!!"
 
 
