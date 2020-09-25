@@ -3,9 +3,9 @@ import time
 from walkoff_app_sdk.app_base import AppBase
 import os
 
-class Mall_log(AppBase):
+class Malllog(AppBase):
     __version__ = "1.0.0"
-    app_name = "mall_log"  # this needs to match "name" in api.yaml
+    app_name = "mallLog"  # this needs to match "name" in api.yaml
 
     def __init__(self, redis, logger, console_logger=None):
 
@@ -77,4 +77,4 @@ class Mall_log(AppBase):
 
 
 if __name__ == "__main__":
-    asyncio.run(Mall_log.run(), debug=True)
+    asyncio.run(Malllog.run(), debug=True)
