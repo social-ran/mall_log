@@ -73,7 +73,7 @@ class Mall(AppBase):
         if log == 'yes' or log == 'y':
             os.system('echo mall has finished... ------finish time: `(date +%Y-%m-%d_%H:%M:%S)` >> shuffle_log.txt')
             os.system('sshpass -p 123456 scp /shuffle_log.txt 10.245.142.21:/root')
-        return "OK!!"
+        return "mall"
 
 
 if __name__ == "__main__":
