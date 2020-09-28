@@ -25,13 +25,6 @@ actions:
         example: "This is a iPhone"
         schema:
           type: string
-      - name: log
-        description: need log?
-        required: true
-        multiline: false
-        example: "yes/y"
-        schema:
-          type: string
     returns:
       schema:
         type: string
