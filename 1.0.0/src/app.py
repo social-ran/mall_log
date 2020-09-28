@@ -11,7 +11,7 @@ class Mall(AppBase):
 
         super().__init__(redis, logger, console_logger)
 
-    async def sell(self, name, sub_name,log):
+    async def sell(self, name, sub_name):
         try:
             from selenium import webdriver
             from selenium.webdriver.common.keys import Keys
@@ -27,9 +27,6 @@ class Mall(AppBase):
         browser = webdriver.Chrome(chrome_options=option)
         # browser=webdriver.Chrome()
 
-        if log == 'yes' or log == 'y':
-            os.system('sshpass -p 123456 scp 10.245.142.21:/root/shuffle_log.txt /')
-            os.system('echo mall is running... ------start time: `(date +%Y-%m-%d_%H:%M:%S)` >> shuffle_log.txt')
         browser.get("http://10.245.142.98")
         browser.set_window_size(1920, 1080)
         browser.maximize_window()
@@ -70,9 +67,6 @@ class Mall(AppBase):
         time.sleep(2)
         browser.find_element_by_xpath('/html/body/div[5]/div/div[3]/button[2]/span').click()
         time.sleep(2)
-        if log == 'yes' or log == 'y':
-            os.system('echo mall has finished... ------finish time: `(date +%Y-%m-%d_%H:%M:%S)` >> shuffle_log.txt')
-            os.system('sshpass -p 123456 scp /shuffle_log.txt 10.245.142.21:/root')
         return "mall"
 
 
