@@ -28,7 +28,7 @@ class Mall(AppBase):
         # browser=webdriver.Chrome()
 
         if log == 'yes' or log == 'y':
-            os.system('sshpass -p hitimc@ics scp 10.245.142.242:/home/log/shuffle_log.txt /')
+            os.system('sshpass -p 123456 scp 10.245.142.21:/root/shuffle_log.txt /')
             os.system('echo mall is running... ------start time: `(date +%Y-%m-%d_%H:%M:%S)` >> shuffle_log.txt')
         browser.get("http://10.245.142.98")
         browser.set_window_size(1920, 1080)
@@ -72,7 +72,7 @@ class Mall(AppBase):
         time.sleep(2)
         if log == 'yes' or log == 'y':
             os.system('echo mall has finished... ------finish time: `(date +%Y-%m-%d_%H:%M:%S)` >> shuffle_log.txt')
-            os.system('sshpass -p hitimc@ics scp /shuffle_log.txt 10.245.142.242:/')
+            os.system('sshpass -p 123456 scp /shuffle_log.txt 10.245.142.21:/root')
         return "OK!!"
 
 
