@@ -11,7 +11,7 @@ class Mall(AppBase):
 
         super().__init__(redis, logger, console_logger)
 
-    async def sell(self, name, sub_name):
+    async def sell(self, myurl ,name, sub_name):
         try:
             from selenium import webdriver
             from selenium.webdriver.common.keys import Keys
@@ -27,7 +27,7 @@ class Mall(AppBase):
         browser = webdriver.Chrome(chrome_options=option)
         # browser=webdriver.Chrome()
 
-        browser.get("http://10.245.142.98")
+        browser.get(myurl)#"http://10.245.142.98"
         browser.set_window_size(1920, 1080)
         browser.maximize_window()
         browser.find_element_by_name("password").send_keys("macro123")
