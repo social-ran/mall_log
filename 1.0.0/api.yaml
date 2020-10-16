@@ -11,6 +11,13 @@ actions:
   - name: sell
     description: sell
     parameters:
+      - name: myurl
+        description: url
+        required: true
+        multiline: false
+        example: "http://10.245.142.98"
+        schema:
+          type: string
       - name: name
         description: name
         required: true
